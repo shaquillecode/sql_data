@@ -1,0 +1,1000 @@
+30004
+Alpharetta, GA
+07652
+Paramus, NJ
+90505
+Torrance, CA
+17543
+Lititz, PA
+43062
+Pataskala, OH
+28092
+Lincolnton, NC
+32159
+Lady Lake, FL
+27587
+Wake Forest, NC
+40165
+Shepherdsville, KY
+29501
+Florence, SC
+03102
+Manchester, NH
+06450
+Meriden, CT
+02132
+West Roxbury, MA
+48195
+Southgate, MI
+01201
+Pittsfield, MA
+02026
+Dedham, MA
+08360
+Vineland, NJ
+06770
+Naugatuck, CT
+08050
+Manahawkin, NJ
+13760
+Endicott, NY
+06484
+Shelton, CT
+60025
+Glenview, IL
+22801
+Harrisonburg, VA
+44136
+Strongsville, OH
+06880
+Westport, CT
+34668
+Port Richey, FL
+19446
+Lansdale, PA
+36605
+Mobile, AL
+61350
+Ottawa, IL
+28052
+Gastonia, NC
+81001
+Pueblo, CO
+23832
+Chesterfield, VA
+57401
+Aberdeen, SD
+24112
+Martinsville, VA
+94603
+Oakland, CA
+25801
+Beckley, WV
+02720
+Fall River, MA
+14127
+Orchard Park, NY
+07052
+West Orange, NJ
+30705
+Chatsworth, GA
+19701
+Bear, DE
+01760
+Natick, MA
+53402
+Racine, WI
+30114
+Canton, GA
+27320
+Reidsville, NC
+59101
+Billings, MT
+23434
+Suffolk, VA
+91316
+Encino, CA
+11374
+Rego Park, NY
+11377
+Woodside, NY
+12203
+Albany, NY
+75115
+Desoto, TX
+32003
+Fleming Island, FL
+34787
+Winter Garden, FL
+44691
+Wooster, OH
+48174
+Romulus, MI
+20901
+Silver Spring, MD
+23803
+Petersburg, VA
+02135
+Brighton, MA
+08610
+Trenton, NJ
+06511
+New Haven, CT
+24401
+Staunton, VA
+34741
+Kissimmee, FL
+32084
+Saint Augustine, FL
+38637
+Horn Lake, MS
+30303
+Atlanta, GA
+60031
+Gurnee, IL
+37918
+Knoxville, TN
+23111
+Mechanicsville, VA
+12401
+Kingston, NY
+08053
+Marlton, NJ
+07076
+Scotch Plains, NJ
+44203
+Barberton, OH
+23703
+Portsmouth, VA
+21114
+Crofton, MD
+19082
+Upper Darby, PA
+46201
+Indianapolis, IN
+29646
+Greenwood, SC
+08831
+Monroe Township, NJ
+43537
+Maumee, OH
+19426
+Collegeville, PA
+46321
+Munster, IN
+59701
+Butte, MT
+08003
+Cherry Hill, NJ
+08037
+Hammonton, NJ
+08817
+Edison, NJ
+23320
+Chesapeake, VA
+60110
+Carpentersville, IL
+22003
+Annandale, VA
+10550
+Mount Vernon, NY
+26508
+Morgantown, WV
+31601
+Valdosta, GA
+48236
+Grosse Pointe, MI
+12901
+Plattsburgh, NY
+19020
+Bensalem, PA
+32707
+Casselberry, FL
+14450
+Fairport, NY
+13126
+Oswego, NY
+60103
+Bartlett, IL
+16506
+Erie, PA
+14094
+Lockport, NY
+34990
+Palm City, FL
+98801
+Wenatchee, WA
+10301
+Staten Island, NY
+60409
+Calumet City, IL
+08081
+Sicklerville, NJ
+60446
+Romeoville, IL
+02151
+Revere, MA
+02131
+Roslindale, MA
+30039
+Snellville, GA
+43612
+Toledo, OH
+48167
+Northville, MI
+21122
+Pasadena, MD
+02301
+Brockton, MA
+46350
+La Porte, IN
+38632
+Hernando, MS
+85365
+Yuma, AZ
+44805
+Ashland, OH
+07747
+Matawan, NJ
+14424
+Canandaigua, NY
+11554
+East Meadow, NY
+33020
+Hollywood, FL
+08861
+Perth Amboy, NJ
+53150
+Muskego, WI
+60156
+Lake In The Hills, IL
+01867
+Reading, MA
+32714
+Altamonte Springs, FL
+02816
+Coventry, RI
+48910
+Lansing, MI
+60187
+Wheaton, IL
+84119
+Salt Lake City, UT
+48180
+Taylor, MI
+02062
+Norwood, MA
+18201
+Hazleton, PA
+14120
+North Tonawanda, NY
+15701
+Indiana, PA
+14850
+Ithaca, NY
+08527
+Jackson, NJ
+98837
+Moses Lake, WA
+84404
+Ogden, UT
+10701
+Yonkers, NY
+48185
+Westland, MI
+33904
+Cape Coral, FL
+95008
+Campbell, CA
+12020
+Ballston Spa, NY
+20164
+Sterling, VA
+02184
+Braintree, MA
+15206
+Pittsburgh, PA
+11412
+Saint Albans, NY
+29730
+Rock Hill, SC
+07054
+Parsippany, NJ
+70115
+New Orleans, LA
+53045
+Brookfield, WI
+46307
+Crown Point, IN
+07109
+Belleville, NJ
+08520
+Hightstown, NJ
+28104
+Matthews, NC
+13440
+Rome, NY
+06606
+Bridgeport, CT
+18974
+Warminster, PA
+53081
+Sheboygan, WI
+60047
+Lake Zurich, IL
+98512
+Olympia, WA
+27511
+Cary, NC
+54952
+Menasha, WI
+46123
+Avon, IN
+06405
+Branford, CT
+11419
+South Richmond Hill, NY
+33040
+Key West, FL
+76901
+San Angelo, TX
+32907
+Palm Bay, FL
+08012
+Blackwood, NJ
+02368
+Randolph, MA
+07065
+Rahway, NJ
+07731
+Howell, NJ
+49221
+Adrian, MI
+80241
+Thornton, CO
+15146
+Monroeville, PA
+97402
+Eugene, OR
+28358
+Lumberton, NC
+32547
+Fort Walton Beach, FL
+11746
+Huntington Station, NY
+91010
+Duarte, CA
+23693
+Yorktown, VA
+17036
+Hummelstown, PA
+44077
+Painesville, OH
+11001
+Floral Park, NY
+85326
+Buckeye, AZ
+33404
+West Palm Beach, FL
+55987
+Winona, MN
+32127
+Port Orange, FL
+02136
+Hyde Park, MA
+70663
+Sulphur, LA
+58102
+Fargo, ND
+48035
+Clinton Township, MI
+44095
+Eastlake, OH
+08816
+East Brunswick, NJ
+07860
+Newton, NJ
+21401
+Annapolis, MD
+02125
+Dorchester, MA
+48192
+Wyandotte, MI
+37110
+Mcminnville, TN
+19050
+Lansdowne, PA
+33458
+Jupiter, FL
+32043
+Green Cove Springs, FL
+27909
+Elizabeth City, NC
+33160
+North Miami Beach, FL
+02895
+Woonsocket, RI
+07087
+Union City, NJ
+20745
+Oxon Hill, MD
+07501
+Paterson, NJ
+07024
+Fort Lee, NJ
+46544
+Mishawaka, IN
+08060
+Mount Holly, NJ
+30083
+Stone Mountain, GA
+48205
+Detroit, MI
+70001
+Metairie, LA
+55330
+Elk River, MN
+60007
+Elk Grove Village, IL
+47401
+Bloomington, IN
+11421
+Woodhaven, NY
+19047
+Langhorne, PA
+45356
+Piqua, OH
+10562
+Ossining, NY
+44883
+Tiffin, OH
+34135
+Bonita Springs, FL
+11717
+Brentwood, NY
+11050
+Port Washington, NY
+37086
+La Vergne, TN
+31904
+Columbus, GA
+20744
+Fort Washington, MD
+20175
+Leesburg, VA
+08096
+West Deptford, NJ
+16601
+Altoona, PA
+01420
+Fitchburg, MA
+40004
+Bardstown, KY
+20746
+Suitland, MD
+29063
+Irmo, SC
+60076
+Skokie, IL
+52402
+Cedar Rapids, IA
+37421
+Chattanooga, TN
+04106
+South Portland, ME
+01886
+Westford, MA
+56301
+Saint Cloud, MN
+39208
+Pearl, MS
+11414
+Howard Beach, NY
+43551
+Perrysburg, OH
+47802
+Terre Haute, IN
+11725
+Commack, NY
+07920
+Basking Ridge, NJ
+21044
+Columbia, MD
+30075
+Roswell, GA
+06902
+Stamford, CT
+33510
+Brandon, FL
+30252
+Mcdonough, GA
+22901
+Charlottesville, VA
+38654
+Olive Branch, MS
+07017
+East Orange, NJ
+19111
+Philadelphia, PA
+49464
+Zeeland, MI
+30188
+Woodstock, GA
+03301
+Concord, NH
+18102
+Allentown, PA
+32725
+Deltona, FL
+98290
+Snohomish, WA
+19355
+Malvern, PA
+08088
+Vincentown, NJ
+55318
+Chaska, MN
+52722
+Bettendorf, IA
+60056
+Mount Prospect, IL
+68506
+Lincoln, NE
+77904
+Victoria, TX
+07728
+Freehold, NJ
+48423
+Davison, MI
+22191
+Woodbridge, VA
+94806
+San Pablo, CA
+18064
+Nazareth, PA
+17402
+York, PA
+29621
+Anderson, SC
+08857
+Old Bridge, NJ
+24540
+Danville, VA
+11741
+Holbrook, NY
+89523
+Reno, NV
+44060
+Mentor, OH
+92111
+San Diego, CA
+12550
+Newburgh, NY
+75043
+Garland, TX
+59404
+Great Falls, MT
+27893
+Wilson, NC
+43123
+Grove City, OH
+44266
+Ravenna, OH
+76522
+Copperas Cove, TX
+11373
+Elmhurst, NY
+60061
+Vernon Hills, IL
+33442
+Deerfield Beach, FL
+07621
+Bergenfield, NJ
+34952
+Port Saint Lucie, FL
+29673
+Piedmont, SC
+01876
+Tewksbury, MA
+50613
+Cedar Falls, IA
+17109
+Harrisburg, PA
+10451
+Bronx, NY
+53140
+Kenosha, WI
+10598
+Yorktown Heights, NY
+60115
+Dekalb, IL
+30240
+Lagrange, GA
+43040
+Marysville, OH
+01841
+Lawrence, MA
+37379
+Soddy Daisy, TN
+27302
+Mebane, NC
+12180
+Troy, NY
+07040
+Maplewood, NJ
+22304
+Alexandria, VA
+44646
+Massillon, OH
+27012
+Clemmons, NC
+60014
+Crystal Lake, IL
+07016
+Cranford, NJ
+45601
+Chillicothe, OH
+59801
+Missoula, MT
+49009
+Kalamazoo, MI
+60402
+Berwyn, IL
+22601
+Winchester, VA
+44312
+Akron, OH
+33880
+Winter Haven, FL
+48867
+Owosso, MI
+22041
+Falls Church, VA
+48067
+Royal Oak, MI
+02149
+Everett, MA
+12804
+Queensbury, NY
+51501
+Council Bluffs, IA
+20782
+Hyattsville, MD
+18901
+Doylestown, PA
+08330
+Mays Landing, NJ
+21093
+Lutherville Timonium, MD
+91762
+Ontario, CA
+30052
+Loganville, GA
+54880
+Superior, WI
+79106
+Amarillo, TX
+02864
+Cumberland, RI
+22701
+Culpeper, VA
+08859
+Parlin, NJ
+60435
+Joliet, IL
+08021
+Clementon, NJ
+27405
+Greensboro, NC
+21244
+Windsor Mill, MD
+11701
+Amityville, NY
+60137
+Glen Ellyn, IL
+15101
+Allison Park, PA
+21014
+Bel Air, MD
+20155
+Gainesville, VA
+33009
+Hallandale, FL
+01930
+Gloucester, MA
+30180
+Villa Rica, GA
+42101
+Bowling Green, KY
+34203
+Bradenton, FL
+02038
+Franklin, MA
+46037
+Fishers, IN
+46322
+Highland, IN
+29708
+Fort Mill, SC
+98607
+Camas, WA
+07032
+Kearny, NJ
+60515
+Downers Grove, IL
+93635
+Los Banos, CA
+55311
+Osseo, MN
+33139
+Miami Beach, FL
+78501
+Mcallen, TX
+40207
+Louisville, KY
+60107
+Streamwood, IL
+44870
+Sandusky, OH
+30092
+Norcross, GA
+33702
+Saint Petersburg, FL
+95993
+Yuba City, CA
+33844
+Haines City, FL
+43147
+Pickerington, OH
+24073
+Christiansburg, VA
+67037
+Derby, KS
+90274
+Palos Verdes Peninsula, CA
+11422
+Rosedale, NY
+60085
+Waukegan, IL
+60148
+Lombard, IL
+35007
+Alabaster, AL
+70605
+Lake Charles, LA
+76110
+Fort Worth, TX
+11369
+East Elmhurst, NY
+59901
+Kalispell, MT
+11201
+Brooklyn, NY
+45420
+Dayton, OH
+52501
+Ottumwa, IA
+27516
+Chapel Hill, NC
+48197
+Ypsilanti, MI
+48021
+Eastpointe, MI
+60185
+West Chicago, IL
+02703
+Attleboro, MA
+85021
+Phoenix, AZ
+30096
+Duluth, GA
+30126
+Mableton, GA
+29910
+Bluffton, SC
+30024
+Suwanee, GA
+61821
+Champaign, IL
+46360
+Michigan City, IN
+21701
+Frederick, MD
+07042
+Montclair, NJ
+29710
+Clover, SC
+47130
+Jeffersonville, IN
+16066
+Cranberry Twp, PA
+30906
+Augusta, GA
+11704
+West Babylon, NY
+45066
+Springboro, OH
+27870
+Roanoke Rapids, NC
+50265
+West Des Moines, IA
+30701
+Calhoun, GA
+29464
+Mount Pleasant, SC
+08844
+Hillsborough, NJ
+17011
+Camp Hill, PA
+20706
+Lanham, MD
+11729
+Deer Park, NY
+02048
+Mansfield, MA
+14580
+Webster, NY
+49022
+Benton Harbor, MI
+29445
+Goose Creek, SC
+95301
+Atwater, CA
+37055
+Dickson, TN
+32034
+Fernandina Beach, FL
+78552
+Harlingen, TX
+08205
+Absecon, NJ
+55060
+Owatonna, MN
+20707
+Laurel, MD
+20747
+District Heights, MD
+33604
+Tampa, FL
+33054
+Opa Locka, FL
+60174
+Saint Charles, IL
+19038
+Glenside, PA
+11364
+Oakland Gardens, NY
+01803
+Burlington, MA
+36109
+Montgomery, AL
+21220
+Middle River, MD
+50023
+Ankeny, IA
+02127
+Boston, MA
+20715
+Bowie, MD
+60462
+Orland Park, IL
+28540
+Jacksonville, NC
+33445
+Delray Beach, FL
+29456
+Ladson, SC
+20877
+Gaithersburg, MD
+38024
+Dyersburg, TN
+32174
+Ormond Beach, FL
+91733
+South El Monte, CA
+21221
+Essex, MD
+01040
+Holyoke, MA
+32578
+Niceville, FL
+46947
+Logansport, IN
+30741
+Rossville, GA
+33010
+Hialeah, FL
+07093
+West New York, NJ
+01020
+Chicopee, MA
+20832
+Olney, MD
+60102
+Algonquin, IL
+11570
+Rockville Centre, NY
+43068
+Reynoldsburg, OH
+44094
+Willoughby, OH
+02072
+Stoughton, MA
+11102
+Astoria, NY
+98037
+Lynnwood, WA
+10002
+New York, NY
+08080
+Sewell, NJ
+21117
+Owings Mills, MD
+32958
+Sebastian, FL
+07039
+Livingston, NJ
+19454
+North Wales, PA
+11040
+New Hyde Park, NY
+37343
+Hixson, TN
+01923
+Danvers, MA
+29483
+Summerville, SC
+60010
+Barrington, IL
+17325
+Gettysburg, PA
+21042
+Ellicott City, MD
+18301
+East Stroudsburg, PA
+03038
+Derry, NH
+29550
+Hartsville, SC
+54220
+Manitowoc, WI
+15642
+Irwin, PA
+60035
+Highland Park, IL
+10956
+New City, NY
+02124
+Dorchester Center, MA
+21228
+Catonsville, MD
+07726
+Englishtown, NJ
+28376
+Raeford, NC
+14075
+Hamburg, NY
+16001
+Butler, PA
+79930
+El Paso, TX
+55343
+Hopkins, MN
+48212
+Hamtramck, MI
+15068
+New Kensington, PA
+22630
+Front Royal, VA
+37659
+Jonesborough, TN
+28205
+Charlotte, NC
+11413
+Springfield Gardens, NY
+60411
+Chicago Heights, IL
+44512
+Youngstown, OH
+13501
+Utica, NY

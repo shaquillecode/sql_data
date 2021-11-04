@@ -19,7 +19,7 @@ from pprint import pprint
 # replace the middle of any odd numbered row with a smilie emoji "😊" in the middle
 # """
 
-    
+#1  
 def generate_pyramid_iterative(rows=7):
     pyramid_entries = []
     for row in range(1, rows + 1):
@@ -29,19 +29,19 @@ def generate_pyramid_iterative(rows=7):
     for row in range(rows, 0,-1):
         pyramid_entries.append("*" * row)
     return pyramid_entries
-
+#2
 def generate_pyramid_list_comp(rows=5):
     pyramid_one = ["*" * i for i in range(1, rows + 1) ]
     pyramid_two  = ["*" * i for i in range(rows, 0, -1) ]
     return pyramid_one + ['\n'] + pyramid_two 
-
+#3
 def generate_pyramid_list_using_copy(rows=5):
     pyramid_one = ["*" * i for i in range(1, rows + 1) ]
     pyramid_two = pyramid_one[:]
     pyramid_two.reverse()
     return pyramid_one + ['\n'] + pyramid_two
 
-
+#1
 def add_smilies(pyramid):
     print("adding smilies...")
     new_pyramid = []
@@ -51,7 +51,7 @@ def add_smilies(pyramid):
         else:
             new_pyramid.append(row)
     return new_pyramid
-
+#2
 def add_smiles(list_comp):
     return [row for row in pyramid if len(row) % 2 != 0]
 

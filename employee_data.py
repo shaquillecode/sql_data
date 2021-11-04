@@ -25,11 +25,11 @@ curr.executescript('''
     );
 ''')
 conn.commit()
-curr.close()   # <=== cursor is closed
+curr.close()# <=== cursor is closed
 conn.row_factory = sqlite3.Row #allows you to access rows using names like a dictionary row['term_date']
 curr = conn.cursor()
 
-filePath = 'employee_data.csv'
+filePath = '/Users/shaq/Desktop/archive/sql_data/employee_data.csv'
 with open(filePath, 'r', encoding='UTF8') as f:
     # create the csv writer
     dr = csv.DictReader(f)
@@ -115,8 +115,8 @@ with open(filePath, 'r', encoding='UTF8') as f:
     curr.close()
     
 
-print("my name is {0} {1} {2}".format("Dominic", "Doyle", "else"))
-print(f"my name is ")
+print("My name is {0} {1} and I am {2}".format("Shaquille", "Duggan", "28"))
+print(f"My name is Shaquille Duggan and I am 28")
 
 test = '3'
 print(type(int(test)))

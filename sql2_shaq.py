@@ -1,9 +1,9 @@
-import csv, sqlite3
-
-
+import sqlite3
 from pprint import pprint
+import os
+import csv
 
-def read_inventory_file(filename ='/Users/shaq/Desktop/sql_data/inventory.csv'):
+def read_inventory_file(filename='/Users/shaq/Desktop/archive/sql_data/inventory.csv'):
 
 
 	with open(filename,'r') as fin:
@@ -15,35 +15,44 @@ def read_inventory_file(filename ='/Users/shaq/Desktop/sql_data/inventory.csv'):
 			csv_vals.append(price_quantity)
 			all_vals.append(tuple(csv_vals))
 	return all_vals
-		
 
-def run_execute_many(vals_to_insert):
-	#create database, add new table, drop table if already there.	
-	conn = sqlite3.connect("hardware_store.db") # change to 'sqlite:///your_filename.db'
-	c = conn.cursor()
-	c.execute("""DROP TABLE inventory""")
-	
-	c.execute("""CREATE TABLE IF NOT EXISTS inventory (
+		
+print(os.getcwd())
+
+def run_execute():
+    connection = sqlite3.connect("practice_hardware_store.db")
+
+    cursor = connection.cursor()
+
+    cursor.execute("""DROP TABLE inventory""")
+
+    command1 ="""CREATE TABLE IF NOT EXISTS inventory (
 	    item_id TEXT,
 	    item TEXT,
 	    price REAL,
-	    quantity INTEGER,
-	   	price_extended REAL)
-	""")
-	c.executemany("""INSERT INTO inventory VALUES (?,?,?,?,?)""", vals_to_insert )
-	additional_items = [ 
-	('HH00','LED lights','11.99','30','359.70'),
-    ('HH10','Sanitizing wipes','6.49','200','1298'),
-    ('GG99','N95 masks - 2 pack','9.99','100','999'),]
-	
-	c.executemany("""INSERT INTO inventory VALUES (?,?,?,?,?)""", additional_items)
-	c.execute("""SELECT * from inventory""")
-	data = c.fetchall()
+	    quantity INTEGER)
+	"""
 
+    cursor.execute(command1)
 
-	pprint(data)
-	return data 
-
+    cursor.execute("INSERT INTO inventory VALUES ('HM01', 'Hammer', 19.99, 10)")
+    cursor.execute("INSERT INTO inventory VALUES ('NL00', 'Nails', 4.99, 5)")
+    cursor.execute("INSERT INTO inventory VALUES ('HW02', 'Pliers', 6.99, 2)")
+    cursor.execute("INSERT INTO inventory VALUES ('HW10', 'Mop', 8.99, 1)")
+    cursor.execute("INSERT INTO inventory VALUES ('HM02', 'Rubber mallet', 14.99, 15)")
+    cursor.execute("INSERT INTO inventory VALUES ('NL01', 'Zinc coated Nails', 5.49, 20)")
+    cursor.execute("INSERT INTO inventory VALUES ('HW22', 'Needle Nose Pliers', 6.49, 12)")
+    cursor.execute("INSERT INTO inventory VALUES ('HW11', 'Swiffer Mop REFILL', 5.99, 30)")
+    cursor.execute("INSERT INTO inventory VALUES ('CN01', 'Circular Saw - 12 inch Blade', 29.99, 40)")
+    cursor.execute("INSERT INTO inventory VALUES ('NL00', '3 inch Nails', 5.99, 25)")
+    cursor.execute("INSERT INTO inventory VALUES ('HW22', 'Plumbing wrench', 12.99, 20)")
+    cursor.execute("INSERT INTO inventory VALUES ('HH90', 'Surgical Masks - 50 pack', 10.99, 1000)")
+    
+    
+    cursor.execute("""SELECT * from inventory""")
+    data = cursor.fetchall()
+    pprint(data) 
+    return data 
 
 def generate_sql_from_input(n=3):
 
@@ -60,6 +69,6 @@ def generate_sql_from_input(n=3):
 
 if __name__ == '__main__':
 	# for second part 
-	# data = generate_sql_from_input()
-	data = read_inventory_file()
-	run_execute_many(data)
+	read_inventory_file()
+	run_execute()
+	# generate_sql_from_input()

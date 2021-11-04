@@ -4,7 +4,7 @@ from pprint import pprint
 import mysql.connector
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
+config = dotenv_values("1.env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
 
 mydb = mysql.connector.connect(
   host=config['HOST'],

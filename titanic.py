@@ -2,10 +2,10 @@ import csv, sqlite3
 from pprint import pprint
 
 #Create a table in titanic database.
-conn = sqlite3.connect("titanic.db") #<-- File path can be used here too.
+conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db") #<-- File path can be used here too.
 
 cur = conn.cursor()
-# cur.execute('''DROP TABLE passengers''')
+cur.execute('''DROP TABLE passengers''')
 cur.execute('''CREATE TABLE IF NOT EXISTS passengers(
   PassengerId     TEXT NOT NULL,                
   Name            TEXT NOT NULL,                
@@ -14,14 +14,14 @@ cur.execute('''CREATE TABLE IF NOT EXISTS passengers(
 )''')
 for row in cur.execute("""SELECT name FROM sqlite_master"""):
     print(row)
-conn.row_factory = sqlite3.Row #access rows using names like a dictionary row['term_date'] 
-print(conn.row_factory)   
+# conn.row_factory = sqlite3.Row #access rows using names like a dictionary row['term_date'] 
+# print(conn.row_factory)   
 conn.commit()
 conn.close() # closed
 
-filename = '/Users/shaq/Desktop/centralized-sql-folder/titanic.csv'
+filename = '/Users/shaq/Desktop/archive/sql_data/titanic.csv'
 with open(filename,'r') as fin:
-    conn = sqlite3.connect("titanic.db")
+    conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
     cur = conn.cursor()   
     dr = csv.DictReader(fin)
     # Insert passengers values
@@ -31,13 +31,13 @@ with open(filename,'r') as fin:
     # Select all passengers
     cur.execute("""SELECT * FROM passengers""")
     passengers = cur.fetchall()
-    print(passengers)
+    pprint(passengers)
 
 conn.commit()
 conn.close()
 
 # Update 
-conn = sqlite3.connect("titanic.db")
+conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
 cur = conn.cursor()    
 cur.execute("""UPDATE passengers SET 
 Name = 'Moran, Mr. James', 
@@ -54,7 +54,7 @@ conn.commit()
 conn.close()
 
 # Delete
-conn = sqlite3.connect("titanic.db")
+conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
 cur = conn.cursor() 
 cur.execute("""SELECT * FROM passengers WHERE Name = "Sjostedt, Mr. Ernst Adolf" """)
 passengers = cur.fetchall()
@@ -69,7 +69,7 @@ conn.commit()
 conn.close()
 
 # Average age of passengers 
-conn = sqlite3.connect("titanic.db")
+conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
 cur = conn.cursor() 
 cur.execute("""SELECT AVG("Age") FROM passengers""")
 passengers = cur.fetchall()

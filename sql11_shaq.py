@@ -19,7 +19,7 @@ mycursor.execute('''DROP TABLE users''')
 mycursor.execute('''CREATE TABLE if not exists users  (Id INTEGER,Firstname varchar(20),Lastname varchar(20),email varchar(50),ip_address varchar(20));''')
 mydb.commit()
 val = []
-with open('mock_data.csv', newline='') as csvfile:
+with open('/Users/shaq/Desktop/archive/sql_data/mock_data.csv', newline='') as csvfile:
 	data = csv.DictReader(csvfile)
 	for entry in data:
 		val.append(tuple(list(entry.values())))

@@ -1,0 +1,92 @@
+
+mysql>  show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database pets;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pets               |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use pets;
+Database changed
+mysql> CREATE TABLE IF NOT EXISTS dogs
+    -> (
+    ->   id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+    ->   name            VARCHAR(150) NOT NULL,                # Name of the cat
+    ->   owner           VARCHAR(150) NOT NULL,                # Owner of the cat
+    ->   birth           DATE NOT NULL,                        # Birthday of the cat
+    ->   type           VARCHAR(150) NOT NULL,                # Breed of the cat
+    ->   PRIMARY KEY     (id)                                  # Make the id the primary key
+    -> );
+Query OK, 0 rows affected (0.00 sec)
+mysql> INSERT INTO dogs (name, owner, birth, type) VALUES
+    -> ('Bean', 'Lennon', '2020-01-03', 'labrador'),
+    -> ('Cookie', 'Casey', '2020-12-13', 'siberian-husky'),
+    -> ('Betsy', 'Jeff', '2021-05-21', 'chiwawa'),
+    -> ('Angel', 'Joe', '2021-05-21', 'great-dane'),
+    -> ('Bootsy', 'Jeff', '2021-05-21', 'bulldog'),
+    -> ('Bootsy', 'John', '2021-05-21', 'bulldog');
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+mysql> select * from dogs;
++----+--------+--------+------------+----------------+
+| id | name   | owner  | birth      | type           |
++----+--------+--------+------------+----------------+
+|  1 | Bean   | Lennon | 2020-01-03 | labrador       |
+|  2 | Cookie | Casey  | 2020-12-13 | siberian-husky |
+|  3 | Betsy  | Jeff   | 2021-05-21 | chiwawa        |
+|  4 | Angel  | Joe    | 2021-05-21 | great-dane     |
+|  5 | Bootsy | Jeff   | 2021-05-21 | bulldog        |
+|  6 | Bootsy | John   | 2021-05-21 | bulldog        |
++----+--------+--------+------------+----------------+
+6 rows in set (0.00 sec)
+mysql> SELECT name FROM dogs WHERE owner = 'Jeff';
++--------+
+| name   |
++--------+
+| Betsy  |
+| Bootsy |
++--------+
+2 rows in set (0.00 sec)
+mysql> DELETE FROM dogs WHERE name='Bootsy';
+Query OK, 2 rows affected (0.00 sec)
+mysql> describe dogs;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(150) | NO   |     | NULL    |                |
+| owner | varchar(150) | NO   |     | NULL    |                |
+| birth | date         | NO   |     | NULL    |                |
+| type  | varchar(150) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+mysql> SELECT * FROM dogs;
++----+--------+--------+------------+----------------+
+| id | name   | owner  | birth      | type           |
++----+--------+--------+------------+----------------+
+|  1 | Bean   | Lennon | 2020-01-03 | labrador       |
+|  2 | Cookie | Casey  | 2020-12-13 | siberian-husky |
+|  3 | Betsy  | Jeff   | 2021-05-21 | chiwawa        |
+|  4 | Angel  | Joe    | 2021-05-21 | great-dane     |
++----+--------+--------+------------+----------------+
+4 rows in set (0.00 sec)
+mysql>

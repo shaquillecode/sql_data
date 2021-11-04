@@ -9,7 +9,7 @@ Tasks accompanying and related to programming include: testing, debugging, sourc
 def find_common_word_alt(text):
 
     #so i want to filter out by the word list 
-    with open('../sql-data/function_words.txt') as f:
+    with open('/Users/shaq/Desktop/archive/sql_data/function_words.txt') as f:
         word_list = list(map(lambda x:x.strip(), f.readlines()))
         # for line in f.readlines():
         #     line = line.strip()
@@ -37,7 +37,7 @@ def find_common_word_alt(text):
 def find_common_word(text):
 
     #so i want to filter out by the word list 
-    with open('function_words.txt') as f:
+    with open('/Users/shaq/Desktop/archive/sql_data/function_words.txt') as f:
         word_list = list(map(lambda x:x.strip(), f.readlines()))
         # for line in f.readlines():
         #     line = line.strip()

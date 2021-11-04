@@ -14,7 +14,7 @@ def check_username(email, firstname, lastname):
 import csv
 from pprint import pprint
 from collections import Counter
-with open('mock_data.csv', newline='') as csvfile:
+with open('/Users/shaq/Desktop/archive/sql_data/mock_data.csv', newline='') as csvfile:
      data = csv.DictReader(csvfile)
 
      all_ip_addresses = []

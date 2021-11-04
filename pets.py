@@ -23,9 +23,9 @@ INSERT INTO cats ( name, owner, birth) VALUES
 
 Values = 'Values'
 table_name = 'cats'
-final_sql_str = " ".join(['INSERT INTO', table_name, '( name, owner, birth )', Values])
+final_sql_str = " ".join([f"""INSERT INTO {table_name} (name, owner, birth ) {Values}"""])
 
-with open('dog_data.csv', newline='') as csvfile:
+with open('/Users/shaq/Desktop/archive/sql_data/dog_data.csv', newline='') as csvfile:
 	dogs_data = csv.reader(csvfile, delimiter=' ', quotechar='|')
 
 	comma_counter = 0

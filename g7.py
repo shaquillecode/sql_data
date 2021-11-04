@@ -1,9 +1,9 @@
 import sqlite3
 
-work_dir = "/Users/shaq/Desktop/centralized-sql-folder/"
+work_dir = "/Users/shaq/Desktop/archive/sql_data/"
 fn = "world_country_populations.csv"
 
-conn = sqlite3.connect(work_dir+"world_populations.db")
+conn = sqlite3.connect(work_dir+"world_country_populations.db")
 c = conn.cursor()
 
 countries = ('Canada', 'France','Germany','Italy','United States','United Kingdom','Japan')
