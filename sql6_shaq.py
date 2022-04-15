@@ -1,63 +1,143 @@
-"""Create a simulated deck of cards as a list"""
+"""Write a function that takes a string of chars, digits and symbols and returns a count of each one."""
+import os
+import mysql.connector
+from dotenv import dotenv_values
+from statistics import mode
 
-cards = [x for x in range(2,11)]
-cards.append('Jack')
-cards.append('Queen')
-cards.append('King')
-cards.append('Ace')
-suits = ['Hearts','Diamonds','Spades','Clubs']
-print(cards)
-print(suits)
-deck = []
-print(len(cards))
-print(len(suits))
-print(len(cards) * len(suits))
-print(len(suits) * len(cards))
-for card in cards:
-    for suit in suits:
-        deck.append(f'{card}-{suit}' )
-print(deck)
-print("+"*36)
-for suit in suits:
-    for card in cards:
-        deck.append(f'{card}-{suit}' )
-print(deck)
-print("+"*36)
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
 
-# Exercise 2
-# Add a 4th item with a key of 'item-004' and name of 'Bloody Mary'
-# Add a 5th item with a key of 'item-005' and name of 'Pineapple Juice'
-# print all item names purchased
-# print all juice items
 
-purchases = {'2021-01-01':
-                 {'item-001':
-                      {'name': 'Alka Seltzer'},
-                 'item-002':
-                      {'name': 'Rolaids'},
-                 'item-003':
-                      {'name': 'Orange juice'}  }            
-            }
+# i.e.
+# str1 = "P@#yn26at^&i5ve" -> Total counts of chars, digits,and symbols Chars = 8 Digits = 3 Symbol = 4
 
-purchases['2021-01-01']['item-004'] = {'name':'Bloody Mary'}
-purchases['2021-01-01']['item-005'] = {'name':'Pineapple Juice'}
-# part 1
-print([ v['name'] for k,v in purchases['2021-01-01'].items()])
-# part 2
-print([ v['name'] for k,v in purchases['2021-01-01'].items() if v['name'].lower().endswith('juice')])
+str1 = "P@#yn26at^&i5ve"
 
-# Exercise 3
-list1 =[1,2,3,4,5,6,7,8,9]
-def findCombosThatAddUpTo9(list1):
-  listOfCombos = []
-  for i in range(len(list1)):
-    for j in range(i, len(list1)):
-      # print(list[i] + list[j])
-      if list1[i] + list1[j] == 9:
-        combos = (list1[i], list1[j])
-        if combos not in listOfCombos:
-          listOfCombos.append(combos)
-  print(list1[i])
-  print(list1[j])
-  return listOfCombos
-findCombosThatAddUpTo9(list1)
+def splitString(str1):
+ 
+    alpha = ""
+    num = ""
+    symbols = ""
+    for i in range(len(str1)):
+        if (str1[i].isdigit()):
+            num = num + str1[i]
+        elif((str1[i] >= 'A' and str1[i] <= 'Z') or (str1[i] >= 'a' and str1[i] <= 'z')):
+            alpha += str1[i]
+        else:
+            symbols += str1[i]
+
+    print(alpha)
+    print(num )
+    print(symbols)
+    print(f"This is the count for chars {len(alpha)}") 
+    print(f"This is the count for digits {len(num)}" )
+    print(f"This is the count for symbols {len(symbols)}")
+    
+    
+
+splitString(str1)
+
+
+# Part 1 Find Most common Letter in text
+text = "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task. Programming involves tasks such as: analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language (commonly referred to as coding).[1][2] The source code of a program is written in one or more languages that are intelligible to programmers, rather than machine code, which is directly executed by the central processing unit. The purpose of programming is to find a sequence of instructions that will automate the performance of a task (which can be as complex as an operating system) on a computer, often for solving a given problem. Proficient programming thus often requires expertise in several different subjects, including knowledge of the application domain, specialized algorithms, and formal logic.Tasks accompanying and related to programming include: testing, debugging, source code maintenance, implementation of build systems, and management of derived artifacts, such as the machine code of computer programs. These might be considered part of the programming process, but often the term software development is used for this larger process with the term programming, implementation, or coding reserved for the actual writing of code. Software engineering combines engineering techniques with software development practices. Reverse engineering is a related process used by designers, analysts and programmers to understand and re-create/re-implement"
+
+print("The original text is : " + str(text))
+ 
+# getting all words
+listcom1 = [wrd for sub in text for wrd in sub.split()]
+ 
+# getting frequency
+freq = mode(listcom1)
+ 
+print("Letter with maximum frequency : " + str(freq))
+
+
+# Part 2 Find Most common word in text list
+text_list = ["Computer", "programming", "is", "the", "process", "of", "designing", "and", "building", "an", "executable", "computer", "program", "to", 'accomplish', 'a', 'specific', 'computing', 'result', 'or', 'to' 'perform', 'a', 'specific', 'task.', 'Programming', 'involves', 'tasks', 'such', 'as:', 'analysis', 'generating', 'algorithms', 'profiling', 'algorithms','accuracy', 'and', 'resource', 'consumption', 'and', 'the', 'implementation', 'of', 'algorithms', 'in', 'a', 'chosen', 'programming', 'language', 'commonly', 'referred', 'to', 'as', 'coding.', 'The', 'source', 'code', 'of', 'a', 'program', 'is', 'written', 'in', 'one', 'or', 'more', 'languages', 'that', 'are', 'intelligible', 'to', 'programmers', 'rather', 'than', 'machine code', 'which', 'is', 'directly', 'executed', 'by', 'the', 'central', 'processing', 'unit.', 'The', 'purpose', 'of', 'programming', 'is', 'to', 'find', 'a', 'sequence.', 'of', 'instructions', 'that', 'will', 'automate', 'the', 'performance', 'of', 'a', 'task', 'which', 'can', 'be', 'as', 'complex', 'as', 'an', 'operating,' 'system', 'on', 'a', 'computer,' 'often', 'for', 'solving', 'a', 'given', 'problem.', 'Proficient', 'programming', 'thus', 'often', 'requires', 'expertise', 'in', 'several', 'different subjects', 'including', 'knowledge', 'of', 'the', 'application', 'domain', 'specialized', 'algorithms', 'and', 'formal', 'logic.', 'Tasks', 'accompanying', 'and', 'related', 'to', 'programming', 'include:', 'testing', 'debugging', 'source', 'code', 'maintenance', 'implementation', 'of', 'build', 'systems', 'and', 'management', 'of', 'derived artifacts', 'such', 'as', 'the', 'machine', 'code', 'of', 'computer', 'programs.', 'These', 'might','be', 'considered', 'part', 'of', 'the', 'programming', 'process', 'but', 'often', 'the', 'term', 'software', 'development', 'is', 'used', 'for', 'this', 'larger', 'process', 'with', 'the', 'term', 'programming', 'implementation', 'or', 'coding', 'reserved', 'for', 'the', 'actual', 'writing', 'of', 'code.', 'Software', 'engineering', 'combines', 'engineering', 'techniques', 'with', 'software', 'development', 'practices.', 'Reverse', 'engineering', 'is', 'a', 'related', 'process', 'used', 'by', 'designers', 'analysts', 'and', 'programmers', 'to', 'understand', 'and', 're-create', 're-implement.']
+ 
+ # getting all words
+listcom2 = [wrd for sub in text_list for wrd in sub.split()]
+ 
+# getting frequency
+freq = mode(listcom2)
+ 
+print("Word with maximum frequency : " + str(freq))
+
+
+
+config = dotenv_values("1.env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
+
+mydb = mysql.connector.connect(
+  host=config['HOST'],
+  user=config['USER'],
+  password=config['PASS'],
+  database='chinook'
+)
+mycursor = mydb.cursor()
+
+"""
+Lists the number of customers in each country, sorted high to low
+"""
+
+query = """ 
+SELECT COUNT(CustomerID), Country
+FROM Customer
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+"""
+
+mycursor.execute(query)
+
+for x in mycursor:
+  print(x)
+mydb.close()
+
+
+mydb = mysql.connector.connect(
+  host=config['HOST'],
+  user=config['USER'],
+  password=config['PASS'],
+  database='chinook'
+)
+mycursor = mydb.cursor()
+
+query = """ 
+SELECT COUNT(CustomerID), Country
+FROM Customer
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+"""
+
+mycursor.execute(query)
+
+for x in mycursor:
+  print(x)
+mydb.close()
+
+
+mydb = mysql.connector.connect(
+  host=config['HOST'],
+  user=config['USER'],
+  password=config['PASS'],
+  database='chinook'
+)
+mycursor = mydb.cursor()
+
+"""
+Lists the number of customers in each country. 
+Only include countries with more than 5 customers
+"""
+
+query = """ 
+SELECT City FROM Customer
+UNION
+SELECT City FROM Employee
+ORDER BY City
+"""
+
+mycursor.execute(query)
+
+for x in mycursor:
+  print(x)
+mydb.close()

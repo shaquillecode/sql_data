@@ -1,109 +1,63 @@
-"""Calculate the mean, median, and mode of the following data set:"""
-import math
-numList = [88,89,90,93,84,86,88,91,88,87]
+"""Create a simulated deck of cards as a list"""
 
-x = len(numList)
+cards = [x for x in range(2,11)]
+cards.append('Jack')
+cards.append('Queen')
+cards.append('King')
+cards.append('Ace')
+suits = ['Hearts','Diamonds','Spades','Clubs']
+print(cards)
+print(suits)
+deck = []
+print(len(cards))
+print(len(suits))
+print(len(cards) * len(suits))
+print(len(suits) * len(cards))
+for card in cards:
+    for suit in suits:
+        deck.append(f'{card}-{suit}' )
+print(deck)
+print("+"*36)
+for suit in suits:
+    for card in cards:
+        deck.append(f'{card}-{suit}' )
+print(deck)
+print("+"*36)
 
-The_sum = sum(numList)
-mean = The_sum / x
+# Exercise 2
+# Add a 4th item with a key of 'item-004' and name of 'Bloody Mary'
+# Add a 5th item with a key of 'item-005' and name of 'Pineapple Juice'
+# print all item names purchased
+# print all juice items
 
-print("Mean / Average is: " + str(mean))
+purchases = {'2021-01-01':
+                 {'item-001':
+                      {'name': 'Alka Seltzer'},
+                 'item-002':
+                      {'name': 'Rolaids'},
+                 'item-003':
+                      {'name': 'Orange juice'}  }            
+            }
 
-# Median
-x = len(numList)
-numList.sort()
+purchases['2021-01-01']['item-004'] = {'name':'Bloody Mary'}
+purchases['2021-01-01']['item-005'] = {'name':'Pineapple Juice'}
+# part 1
+print([ v['name'] for k,v in purchases['2021-01-01'].items()])
+# part 2
+print([ v['name'] for k,v in purchases['2021-01-01'].items() if v['name'].lower().endswith('juice')])
 
-if x % 2 == 0:
-    median1 = numList[x//2]
-    median2 = numList[x//2 - 1]
-    median = (median1 + median2)/2
-else:
-    median = numList[x//2]
-print("Median is: " + str(median))
-print(numList)
-
-# Mode
-numlistlen = int(input("Please enter how many numbers you would like to compare: "))
-mode = 0
-for i in range(0,numlistlen):
-    maxiumNum = max(numList)
-    j = maxiumNum + 1
-    count = [0]*j
-for i in range(j):
-    count[i]=0
-
-for i in range(numlistlen):
-    count[numList[i]] +=1
-
-n = count[0]
-for i in range(1, j):
-    if count[i] > n:
-        n = count[i]
-        mode = i
-print("This is the mode = "+str(mode))
-print("This is the original list = "+str(numList))
-
-import math
-def isPrime(num):
-    prime = False
-    if num >= 2:
-
-        prime = True
-        for i in range(2,int(math.sqrt(num))+1):
-            if num % i == 0:
-                prime = False
-                break
-    return prime
-
-for i in range(1000,1101):
-    if isPrime(i):
-        print(i)
-
-
-def isPrime(num):
-    prime = False
-    if num >= 2:
-        #
-        prime = True
-        for i in range(2,int(math.sqrt(num))+1):
-            if num % i == 0:
-                prime = False
-                break
-    return prime
-
-for i in range(1000,1101):
-    if isPrime(i):
-        sum_of_digits = sum([ int(x) for x in list(str(i))])
-        print(i, sum_of_digits,isPrime(sum_of_digits))
-
-#sum([ int(x) for x in list(str(i))])
-digits = []
-num = 1009
-total = 0
-for i in list(str(num)):
-    total += int(i)
-print(total)
-
-
-import random
-students = ['Renee','Julia','Warren','Stacey','Charles','Linda','Dwight','Ann','Franklin','George','Walter','Susan']
-volunteers = []
-n = 5
-for i in range(n):
-    picked = random.choice(students)
-    print('{0} was picked'.format(picked))
-    students.remove(picked)
-    volunteers.append(picked)
-    print(students)
-print(f'I randomly picked the following students: {volunteers}')
-print(f'Remaining students: {students}')
-
-students = ['Renee','Julia','Warren','Stacey','Charles','Linda','Dwight','Ann','Franklin','George','Walter','Susan']
-def student_picker(x):
-    return f"{random.sample(x, 5)} were chosen to volunteer"
-print(student_picker(students))
-
-
-students = ['Renee','Julia','Warren','Stacey','Charles','Linda','Dwight','Ann','Franklin','George','Walter','Susan']
-random.shuffle(students)
-print(students[0:5])
+# Exercise 3
+list1 =[1,2,3,4,5,6,7,8,9]
+def findCombosThatAddUpTo9(list1):
+  listOfCombos = []
+  for i in range(len(list1)):
+    for j in range(i, len(list1)):
+      # print(list[i] + list[j])
+      if list1[i] + list1[j] == 9:
+        combos = (list1[i], list1[j])
+        if combos not in listOfCombos:
+          listOfCombos.append(combos)
+  print(list1[i])
+  print(list1[j])
+  return listOfCombos
+findCombosThatAddUpTo9(list1)

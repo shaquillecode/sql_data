@@ -1,73 +1,82 @@
+"""given the dataset provided MOCK_DATA.csv, find out the following: 
+- sort the IP addresses by the first three digits (network identifier) 
+- What are all the domains in the emails (domain i.e. : @engadget.com)
+- what is the most common domain name ? 
+- Out of the emails create a dictionary of counts for the top level domain names (.com, .pl etc..)
+```
+{ '.com': 10, .... }
+```
+
+- Write a function called check_username that takes an email address and checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name 
+
+def check_username(email, firstname, lastname):
+"""""
 import os
-import string
+import csv
 from pprint import pprint
-from operator import itemgetter
+from collections import Counter
 
 print(os.getcwd()) #this gets the working directory
 os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
 print(os.getcwd()) # This show changes
 
-text="""
-Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task. Programming involves tasks such as: analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language (commonly referred to as coding).[1][2] The source code of a program is written in one or more languages that are intelligible to programmers, rather than machine code, which is directly executed by the central processing unit. The purpose of programming is to find a sequence of instructions that will automate the performance of a task (which can be as complex as an operating system) on a computer, often for solving a given problem. Proficient programming thus often requires expertise in several different subjects, including knowledge of the application domain, specialized algorithms, and formal logic.
-Tasks accompanying and related to programming include: testing, debugging, source code maintenance, implementation of build systems, and management of derived artifacts, such as the machine code of computer programs. These might be considered part of the programming process, but often the term software development is used for this larger process with the term programming, implementation, or coding reserved for the actual writing of code. Software engineering combines engineering techniques with software development practices. Reverse engineering is a related process used by designers, analysts and programmers to understand and re-create/re-implement
-"""
+with open('mock_data.csv', newline='') as csvfile:
+    data = csv.DictReader(csvfile)
 
-def find_common_word_alt(text):
+    all_ip_addresses = []
+    all_emails = []
+    for row in data:
+        all_ip_addresses.append(row['ip_address'])
+        all_emails.append(row['email'])
 
-    #so i want to filter out by the word list 
-    with open('function_words.txt') as f:
-        word_list = list(map(lambda x:x.strip(), f.readlines()))
-        # for line in f.readlines():
-        #     line = line.strip()
-        #     print(line)
-
-    text = text.translate(str.maketrans('', '', string.punctuation ))
-    the_list = text.lower().split()
-    the_dict = {}
-    for x in set(the_list):
-
-        if x not in word_list:
-            if x not in the_dict:
-                the_dict[x] = text.count(x)
-            the_dict[x] += 1
-    common_word = [f'"{k}" is the most common word. It appeared {v} times' for k,v in the_dict.items() if v == max(the_dict.values())]
-    pprint(sorted(the_dict.items(), key=itemgetter(1), reverse=True)[:5])
-    max_count = max(the_dict.values())
-    for k,v in the_dict.items(): 
-        if v == max_count:
-            print(f"key {k}")
+    #part 1: sorted ip addresses
 
 
+    sorted_ips = sorted(all_ip_addresses, key=lambda ip: int(ip.split('.')[0]))
+    # pprint(sorted_ips)
 
 
-def find_common_word(text):
+    #part 2: What are all the domains in the emails (domain i.e. :@ engadget.com)
 
-    #so i want to filter out by the word list 
-    with open('function_words.txt') as f:
-        word_list = list(map(lambda x:x.strip(), f.readlines()))
-        # for line in f.readlines():
-        #     line = line.strip()
-        #     print(line)
+    #helper function
+    get_domain = lambda email : email.split('@')[1]
 
-    text = text.translate(str.maketrans('', '', string.punctuation ))
-    the_list = text.lower().split()
-    the_dict = {}
-    for x in the_list:
+    # def get_domain(email):
+    # 	return email.split('@')[1]
 
-        if x not in word_list:
-            if x not in the_dict:
-                the_dict[x] = 0
-            the_dict[x] += 1
-    #pprint(the_dict)
+    distinct_domains = { get_domain(dom) for dom in all_emails }
+    #print( set([ get_domain(dom) for dom in all_emails ]))
+    #distinct_domains_list = set([ get_domain(dom) for dom in all_emails ])
+    #pprint(distinct_domains)
 
+    #part 3: What is the most common domain name ? (using counter)
+    domain_counts = {}
+    for dom in all_emails:
+        dom = get_domain(dom)
+    if dom not in domain_counts:
+        domain_counts[dom] = 0
+    domain_counts[dom] += 1
+    pprint(sorted(domain_counts.items(), key=lambda entry:entry[1] ,reverse=True)[:5])
 
-    common_word = [f'"{k}" is the most common word. It appeared {v} times' for k,v in the_dict.items() if v == max(the_dict.values())]
-    pprint(sorted(the_dict.items(), key=itemgetter(1), reverse=True)[:5])
-    max_count = max(the_dict.values())
-    for k,v in the_dict.items(): 
-        if v == max_count:
-            print(f"key {k}")
+    #part 3 alt: What is the most common domain name ? (using counter)
+    pprint(Counter(get_domain(dom) for dom in all_emails).most_common()[:3])
 
+    #Part 4: Create a dictionary of counts for the top level domain names
 
-    pprint(common_word)
-find_common_word(text)
+    #helper function
+    get_top_level_domain = lambda email : email.split('.')[-1]
+
+    pprint(Counter(get_top_level_domain(dom) for dom in all_emails).most_common()[:3])
+
+    """
+    Write a function called check_username that takes an email address and 
+    checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name
+
+    """
+    def check_username(email, firstname, lastname):
+        email = email.lower()
+        firstname = firstname.lower()
+        lastname = lastname.lower()
+        if email.startswith(firstname[:1]) and lastname in email:
+            return True
+        return False
