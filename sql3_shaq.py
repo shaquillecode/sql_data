@@ -1,4 +1,10 @@
+'''Library DB reader'''
+import os
 import sqlite3
+
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
 
 conn = sqlite3.connect(":memory:")
 c = conn.cursor()
@@ -59,8 +65,8 @@ for book in books:
     print('='*30)
 conn.close()
 
-#set is a collection of distinct objects with no repeated elements 
-# sets do not have an order 
+#set is a collection of distinct objects with no repeated elements
+# sets do not have an order
 list1 = [1,2,3,4]
 list2 =  [1,2,3,4, 4]
 set1 = set(list2)
@@ -79,10 +85,10 @@ for cnt in countBooks:
     print(cnt)
     print('='*30)
 
-# c.execute('ALTER TABLE books RENAME TO my_books')  
+# c.execute('ALTER TABLE books RENAME TO my_books')
 
 # Rename it back to books
-# c.execute('ALTER TABLE my_books RENAME TO books')  
+# c.execute('ALTER TABLE my_books RENAME TO books')
 
 conn.commit()
 conn.close()
@@ -92,15 +98,13 @@ c = conn.cursor()
 c.execute('ALTER TABLE books RENAME COLUMN title TO sub_title')
 
 # Rename it back
-c.execute('ALTER TABLE books RENAME COLUMN sub_title TO title')  
+c.execute('ALTER TABLE books RENAME COLUMN sub_title TO title')
 
 c.execute('ALTER TABLE books ADD COLUMN price TEXT') # This can be REAL type as well
 
 c.execute('ALTER TABLE books ADD COLUMN ebook_price REAL') # This can be REAL type as well
 conn.commit()
 conn.close()
-
-import sqlite3
 
 conn = sqlite3.connect("library.db")
 c = conn.cursor()
@@ -125,7 +129,7 @@ updatedBooks = c.fetchall()
 for book in updatedBooks:
     print(book)
     print('='*30)
-conn.commit()   
+conn.commit()
 conn.close()
 
 conn = sqlite3.connect("library.db")

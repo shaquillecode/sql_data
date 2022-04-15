@@ -1,8 +1,14 @@
-import csv, sqlite3
+import os
+import csv
+import sqlite3
 from pprint import pprint
 
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
+
 #Create a table in titanic database.
-conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db") #<-- File path can be used here too.
+conn = sqlite3.connect("titanic.db") #<-- File path can be used here too.
 
 cur = conn.cursor()
 cur.execute('''DROP TABLE passengers''')
@@ -19,9 +25,9 @@ for row in cur.execute("""SELECT name FROM sqlite_master"""):
 conn.commit()
 conn.close() # closed
 
-filename = '/Users/shaq/Desktop/archive/sql_data/titanic.csv'
+filename = 'titanic.csv'
 with open(filename,'r') as fin:
-    conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
+    conn = sqlite3.connect("titanic.db")
     cur = conn.cursor()   
     dr = csv.DictReader(fin)
     # Insert passengers values
@@ -37,7 +43,7 @@ conn.commit()
 conn.close()
 
 # Update 
-conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
+conn = sqlite3.connect("titanic.db")
 cur = conn.cursor()    
 cur.execute("""UPDATE passengers SET 
 Name = 'Moran, Mr. James', 
@@ -54,7 +60,7 @@ conn.commit()
 conn.close()
 
 # Delete
-conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
+conn = sqlite3.connect("titanic.db")
 cur = conn.cursor() 
 cur.execute("""SELECT * FROM passengers WHERE Name = "Sjostedt, Mr. Ernst Adolf" """)
 passengers = cur.fetchall()
@@ -69,7 +75,7 @@ conn.commit()
 conn.close()
 
 # Average age of passengers 
-conn = sqlite3.connect("/Users/shaq/Desktop/archive/sql_data/titanic.db")
+conn = sqlite3.connect("titanic.db")
 cur = conn.cursor() 
 cur.execute("""SELECT AVG("Age") FROM passengers""")
 passengers = cur.fetchall()

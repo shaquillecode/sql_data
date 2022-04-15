@@ -4,22 +4,20 @@ use pymongo to write a find statement to calculate the total populations of the 
 use pymongo to write a find statement to find all countries that have a landmass less than 2000 km^2
 use pymongo to write a find statement to find the total population of countries not including Russia, USA and China. extra: write a function that allows you to pass in the search parameters to find and returns the results.
 """
-
-import mysql.connector
-from dotenv import dotenv_values
+import os
+import sqlite3
 from pprint import pprint
 from pymongo import MongoClient
 
-config = dotenv_values("sqltopython.env")
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
 
-mydb = mysql.connector.connect(
-  host= 'localhost',
-  user= 'root',
-  password= ' ',
-  database='world_stats'
-)
 
-cur = mydb.cursor()
+db_name = "world.db"
+conn = sqlite3.connect(db_name)
+cur = conn.cursor()
+
 data = []
 cur.execute("SELECT * FROM country_data;")
 for entry in cur:

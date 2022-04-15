@@ -1,8 +1,9 @@
 '''I am performing CRUD operations on the clients database'''
-import os, sqlite3
+import os
+import sqlite3
 
 print(os.getcwd()) #this gets the working directory
-os.chdir('/Users/shaq/Desktop/archive/sql_data')#this changes the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
 print(os.getcwd()) # This show changes
 
 conn = sqlite3.connect('clients.db')
@@ -22,7 +23,7 @@ c.execute("""CREATE TABLE IF NOT EXISTS customers (
 conn.commit()  # <=== commit our table to the database
 conn.close()
 
-conn = sqlite3.connect('clients.db')#<--# This opens up the Database again and at the end of instructions put conn.close()
+conn = sqlite3.connect('clients.db')#<--# This opens up the Database again
 c = conn.cursor()
 # for row in c.execute("""SELECT name FROM sqlite_master"""):
 #     print(row)
@@ -61,7 +62,7 @@ c.executemany("""INSERT INTO customers VALUES (?,?,?,?,?)""", [
     ('Horace','Penn','50 Gansavort Street','Apt 9B','88770'),
     ('Patrice','Wright','60 Brooklyn Bridge Park Street','Apt 44M','11234')
 ])
-# A better way to insert multiple records at once 
+# A better way to insert multiple records at once
 # c.executemany("""INSERT INTO customers VALUES (?,?,?,?,?)""", all_customers)
 
 
@@ -136,7 +137,7 @@ for cdata in custT:
     print(f"Last name like T : {cdata}")
     print('='*30)
 
-c.execute('SELECT rowid,* FROM customers WHERE address1 LIKE "%brooklyn%" ') # Case does not matter 
+c.execute('SELECT rowid,* FROM customers WHERE address1 LIKE "%brooklyn%" ') # Case does not matter
 customers_like_bk = c.fetchall()
 
 for cdata in customers_like_bk:
@@ -148,12 +149,12 @@ conn.commit()
 conn.close()
 
 # Notice the defaults for the fields and whereClause
-def queryDB(db,table,fields='*',whereClause=''):   
+def queryDB(db,table,fields='*',whereClause=''):
     conn = sqlite3.connect(db if db[-3:] == '.db' else db+'.db')# <=== The .db extension is necessary
     c = conn.cursor()
     sql = '''SELECT {0} FROM {1} {2}'''.format(fields,table,whereClause)
     print(f"This is the initial Query ==> {sql}")
-    c.execute(sql)  
+    c.execute(sql)
     queryResults = c.fetchall()
     # print(queryResults)
 
@@ -163,7 +164,7 @@ def queryDB(db,table,fields='*',whereClause=''):
     conn.commit()
     conn.close()
 
-    
+
 queryDB('clients','customers')
 print("Reults of the First query using the queryDB() Function end ^ above")
 print()
@@ -188,11 +189,11 @@ for cust in theCust:
     print('='*30)
 
 
-c.execute('''UPDATE customers SET 
+c.execute('''UPDATE customers SET
 address1 = "1 Park Avenue",
 address2 = "Penthouse A"
-WHERE fName = "Larry" and lName = "Gantt" ''') 
-c.execute('''SELECT * FROM customers WHERE fName = "Larry" and lName = "Gantt" ''') 
+WHERE fName = "Larry" and lName = "Gantt" ''')
+c.execute('''SELECT * FROM customers WHERE fName = "Larry" and lName = "Gantt" ''')
 updateCust = c.fetchall()
 # print(updateCust) #==> Notice List of Tuple or Tuples
 for cust in updateCust:
@@ -201,10 +202,10 @@ for cust in updateCust:
     print('='*30)
 
 
-c.execute('''UPDATE customers SET 
+c.execute('''UPDATE customers SET
 lname = "Jones-Pollard"
-WHERE fName = "Mary" and address1 = "15 Main street" ''') 
-c.execute('''SELECT * FROM customers WHERE fName = "Mary" and address1 = "15 Main street" ''') 
+WHERE fName = "Mary" and address1 = "15 Main street" ''')
+c.execute('''SELECT * FROM customers WHERE fName = "Mary" and address1 = "15 Main street" ''')
 marriedCust = c.fetchall()
 for cust in marriedCust:
     # Use indexing to return the elements of tuple or tuples
@@ -212,17 +213,17 @@ for cust in marriedCust:
     print('='*30)
 
 
-c.execute('''UPDATE customers SET 
+c.execute('''UPDATE customers SET
 address1 = "10 Pineapple street",
 address2 = "apt 3B"
-WHERE fName = "Henrietta" and lName = "Teague" ''') 
+WHERE fName = "Henrietta" and lName = "Teague" ''')
 
-c.execute('''UPDATE customers SET 
+c.execute('''UPDATE customers SET
 address1 = "10 Pineapple street",
 address2 = "apt 3B"
-WHERE fName = "Harry" and lName = "Teague" ''') 
+WHERE fName = "Harry" and lName = "Teague" ''')
 
-c.execute('''SELECT * FROM customers WHERE lName = "Teague" ''') 
+c.execute('''SELECT * FROM customers WHERE lName = "Teague" ''')
 custTeague = c.fetchall()
 for cust in custTeague:
     # Use indexing to return the elements of the tuple
@@ -237,61 +238,41 @@ conn.close()
 # String operations can be conducted on a table or a string
 conn = sqlite3.connect('clients.db')
 c = conn.cursor()
-conn.commit()
-c.execute('''SELECT SUBSTR('I LOVE PYTHON AND SQL',3,11)''') 
+
+c.execute('''SELECT SUBSTR('I LOVE PYTHON AND SQL',3,11)''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT TRIM(' SQL   ')''') 
+c.execute('''SELECT TRIM(' SQL   ')''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT LTRIM('         SQL   ')''') 
+c.execute('''SELECT LTRIM('         SQL   ')''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT RTRIM('   SQL   ')''') 
+c.execute('''SELECT RTRIM('   SQL   ')''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT LENGTH('         SQL   ')''') 
+c.execute('''SELECT LENGTH('         SQL   ')''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
 # Execute two commands
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT LENGTH(TRIM('         SQL   '))''') 
+c.execute('''SELECT LENGTH(TRIM('         SQL   '))''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT REPLACE('I LOVE PYTHON','PYTHON','SQL')''') 
+c.execute('''SELECT REPLACE('I LOVE PYTHON','PYTHON','SQL')''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
-conn = sqlite3.connect('clients.db')
-c = conn.cursor()
-conn.commit()
-c.execute('''SELECT 'I LOVE PYTHON ' || '- I LOVE SQL' ''') 
+c.execute('''SELECT 'I LOVE PYTHON ' || '- I LOVE SQL' ''')
 sqlResults = c.fetchall()
 print(sqlResults)
 
+conn.commit()
 conn.close()
 
 # We can delete one row in a table by adding a where clause

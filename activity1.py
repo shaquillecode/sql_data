@@ -9,24 +9,26 @@ Write a function that asks the user for input, and then computes the sum of all 
 Part 2: Given a list of words (from user input) determine which word has the highest ascii value.
 """
 def input_word():
+    '''input_word'''
 
-	while True:
-		try:
-			wd = input('Enter a word:\n').strip()
-			break
-		except ValueError:
-			print("Enter a string!!, wrong value type")	
-	return wd
+    while True:
+        try:
+            wd = input('Enter a word:\n').strip()
+            break
+        except ValueError:
+            print("Enter a string!!, wrong value type")
+    return wd
 
 def ascii_calculator(n=1):
+    '''ascii_calculator'''
 
-	all_words = []
-	while n:
-		wd = input_word()	
-		n -= 1
-		val = (wd, sum(ord(char) for char in wd))
-		print((f"the ascii value of {val[0]} is { val[1]}"))
-		all_words.append(val)
-	return all_words 
+    all_words = []
+    while n:
+        wd = input_word()
+        n -= 1
+        val = (wd, sum(ord(char) for char in wd))
+        print((f"the ascii value of {val[0]} is { val[1]}"))
+        all_words.append(val)
+    return all_words
 if __name__ == '__main__':
-	ascii_calculator()
+    ascii_calculator()

@@ -1,11 +1,13 @@
+import os
 import mysql.connector
 from dotenv import dotenv_values
-from pprint import pprint
 from operator import itemgetter
 
-	
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
 
-def get_digit_frequencies(file='/Users/shaq/Desktop/archive/sql_data/zipcode_data.txt'):
+def get_digit_frequencies(file='zipcode_data.txt'):
 
 	digits = {}
 	zipcodes = []
@@ -30,12 +32,12 @@ def get_digit_frequencies(file='/Users/shaq/Desktop/archive/sql_data/zipcode_dat
 
 	return digit_freqs, zipcodes
 
-config = dotenv_values("/Users/shaq/Desktop/archive/sql_data/1.env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
+config = dotenv_values("1.env")
 
 mydb = mysql.connector.connect(
   host=config['HOST'],
   user=config['USER'],
-  password=config['PASSWORD'],
+  password=config['PASS'],
   database='zip'
 )
 

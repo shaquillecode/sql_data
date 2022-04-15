@@ -1,32 +1,23 @@
-import csv
-
-with open('World_country_populations.csv', 'r') as csv_file1:
-    csv1_reader = csv.reader(csv_file1)
-
-    print(csv1_reader)
-
-    for line in csv1_reader:
-       print(line)
-
-
-import os
-
-
-with open("World_country_populations.csv",'r') as fh:
-    line = fh.readline()
-    i = 0
-    while line:
-        if i > 0:
-            print(line)
-        line = fh.readline()
-        i += 1
-
 import os
 import sqlite3
 
+print(os.getcwd()) #this gets the working directory
+os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working directory
+print(os.getcwd()) # This show changes
 
-fn = "World_country_populations.csv"
-db_name = "world_populations.db"
+
+
+# with open("World_country_populations.csv",'r') as fh:
+#     line = fh.readline()
+#     i = 0
+#     while line:
+#         if i > 0:
+#             print(line)
+#         line = fh.readline()
+#         i += 1
+
+fn = "world_country_populations.csv"
+db_name = "world_country_populations.db"
 
 conn = sqlite3.connect(db_name)
 c = conn.cursor()
@@ -87,8 +78,6 @@ with open(fn,'r') as fh:
         i += 1
 
 # CREATE THE DATABASE
-import sqlite3, csv, pathlib
-path = pathlib.Path()
 con = sqlite3.connect('world_country_populations.db')
 cur = con.cursor()
 cur.executescript("""create table if not exists wcp (
@@ -139,13 +128,10 @@ with open('World_country_populations.csv', 'r') as data:
         line = data.readline()
         i += 1
 
-import os
-import sqlite3
 
 
-fn = "World_country_populations.csv"
-
-conn = sqlite3.connect("world_populations.db")
+fn = "world_country_populations.csv"
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 c.execute('''SELECT country, population FROM pop_data ORDER BY population DESC''')
 rows = c.fetchall()
@@ -153,10 +139,7 @@ for row in rows:
     print(f'{row[0]} - population in mm {row[1]/1000000}') 
 conn.close()
 
-import os
-import sqlite3
-
-conn = sqlite3.connect("world_populations.db")
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 c.execute('''SELECT sum(population) FROM pop_data ORDER BY population DESC''')
 rows = c.fetchall()
@@ -164,13 +147,9 @@ for row in rows:
     print(f'{row[0]}')
     
 
-import os
-import sqlite3
+fn = "world_country_populations.csv"
 
-
-fn = "World_country_populations.csv"
-
-conn = sqlite3.connect("world_populations.db")
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 c.execute('''SELECT country, median_age FROM pop_data ORDER BY median_age DESC LIMIT 10''')
 rows = c.fetchall()
@@ -178,13 +157,9 @@ for row in rows:
     print(f'{row[0]} - median age is {row[1]}') 
 conn.close()
 
-import os
-import sqlite3
-
-
 fn = "World_country_populations.csv"
 
-conn = sqlite3.connect("world_populations.db")
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 c.execute('''SELECT country, net_change FROM pop_data WHERE net_change < 0 ORDER BY net_change ASC LIMIT 10''')
 rows = c.fetchall()
@@ -192,13 +167,9 @@ for row in rows:
     print(f'{row[0]} - people who left {row[1]}') 
 conn.close()
 
-import os
-import sqlite3
+fn = "world_country_populations.csv"
 
-
-fn = "World_country_populations.csv"
-
-conn = sqlite3.connect("world_populations.db")
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 ['']
 c.execute('''SELECT country, migrants FROM pop_data WHERE migrants > 0 ORDER BY migrants DESC LIMIT 10''')
@@ -207,55 +178,13 @@ for row in rows:
     print(f'{row[0]} - migrants {row[1]}') 
 conn.close()
 
-import os
-import sqlite3
 
+fn = "world_country_populations.csv"
 
-fn = "World_country_populations.csv"
-
-conn = sqlite3.connect("world_populations.db")
+conn = sqlite3.connect("world_country_populations.db")
 c = conn.cursor()
 c.execute('''SELECT country, population, year_change FROM pop_data WHERE population < 10000000 ORDER BY year_change DESC LIMIT 10''')
 rows = c.fetchall()
 for row in rows:
     print(f'{row[0]} - year change {row[2]} - population - {row[1]}') 
 conn.close()
-
-alist = [1,2,3]
-3 in alist
-
-import os
-import sqlite3
-
-
-fn = "World_country_populations.csv"
-
-conn = sqlite3.connect("world_populations.db")
-c = conn.cursor()
-
-countries = ('Canada', 'France','Germany','Italy','United States','United Kingdom','Japan')
-
-c.execute("""select sum(migrants) from pop_data where country in {0} and migrants > 0""".format(countries))
-total_g7_migrants = c.fetchone()[0]
-c.execute("""select sum(migrants) from pop_data where migrants > 0""")
-total_migrants_world_wide =  c.fetchone()[0]
-total_migrants_rest_of_world = total_migrants_world_wide - total_g7_migrants
-print(f"Percentage of migrants G7 takes {round((total_g7_migrants/total_migrants_world_wide)*100,2)}")
-print(f"Percentage of migrants the rest of the world takes {round((total_migrants_rest_of_world/total_migrants_world_wide)*100,2)}")
-
-for country in countries:
-    c.execute("""select sum(migrants) from pop_data where country = '{0}' and migrants > 0""".format(country))
-    g_country_count = c.fetchone()[0]
-    print(f"Percentage of migrants {country} takes: { round((g_country_count/total_g7_migrants)*100,2 ) }")
-
-
-# alternate solution 
-looking_for = str(20)
-stringOfNumbers = '32040230213340205020112'
-found_indicies = []
-for index, entry in enumerate(stringOfNumbers):
-    tmp_str = stringOfNumbers[index:index + 2]
-    if tmp_str == looking_for:
-        print(f"index: {index}, {tmp_str}")
-        found_indicies.append(index)
-print("There are {0} - 20's found in the following positions {1}".format(len(found_indicies),found_indicies))

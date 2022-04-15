@@ -1,4 +1,4 @@
-# Create a simulated deck of cards as a list
+"""Create a simulated deck of cards as a list"""
 
 cards = [x for x in range(2,11)]
 cards.append('Jack')
@@ -30,13 +30,13 @@ print("+"*36)
 # print all item names purchased
 # print all juice items
 
-purchases = {'2021-01-01': 
-                 {'item-001': 
+purchases = {'2021-01-01':
+                 {'item-001':
                       {'name': 'Alka Seltzer'},
-                 'item-002': 
+                 'item-002':
                       {'name': 'Rolaids'},
-                 'item-003': 
-                      {'name': 'Orange juice'}  }                
+                 'item-003':
+                      {'name': 'Orange juice'}  }            
             }
 
 purchases['2021-01-01']['item-004'] = {'name':'Bloody Mary'}
@@ -53,9 +53,9 @@ def findCombosThatAddUpTo9(list1):
   for i in range(len(list1)):
     for j in range(i, len(list1)):
       # print(list[i] + list[j])
-      if(list1[i] + list1[j] == 9):
+      if list1[i] + list1[j] == 9:
         combos = (list1[i], list1[j])
-        if(combos not in listOfCombos):
+        if combos not in listOfCombos:
           listOfCombos.append(combos)
   print(list1[i])
   print(list1[j])
