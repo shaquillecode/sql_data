@@ -1,4 +1,4 @@
-'''MySQLconnector.py'''
+'''mySQLconnector.py'''
 import os
 import mysql.connector
 from dotenv import dotenv_values

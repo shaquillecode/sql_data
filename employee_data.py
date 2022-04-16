@@ -32,6 +32,7 @@ curr.executescript('''
 ''')
 conn.commit()
 curr.close()# <=== cursor is closed
+
 conn.row_factory = sqlite3.Row #allows you to access rows using names like a dictionary row['term_date']
 curr = conn.cursor()
 
@@ -119,6 +120,5 @@ with open(FILEPATH, 'r', encoding='UTF8') as fin:
     pprint(all_employees_by_last)
     print("=" * 30)
     curr.close()
-
 
 print("My name is {0} {1} and I am {2}".format("Shaquille", "Duggan", "28"))

@@ -1,3 +1,4 @@
+'''Titanic Passengers'''
 import os
 import csv
 import sqlite3
@@ -20,15 +21,16 @@ cur.execute('''CREATE TABLE IF NOT EXISTS passengers(
 )''')
 for row in cur.execute("""SELECT name FROM sqlite_master"""):
     print(row)
-# conn.row_factory = sqlite3.Row #access rows using names like a dictionary row['term_date'] 
-# print(conn.row_factory)   
+# conn.row_factory = sqlite3.Row #access rows using names like a dictionary row['term_date']
+# print(conn.row_factory)
 conn.commit()
 conn.close() # closed
 
-filename = 'titanic.csv'
-with open(filename,'r') as fin:
+FILENAME = 'titanic.csv'
+with open(FILENAME,'r') as fin:
     conn = sqlite3.connect("titanic.db")
-    cur = conn.cursor()   
+
+    cur = conn.cursor()
     dr = csv.DictReader(fin)
     # Insert passengers values
     to_insert = [(entry['PassengerId'], entry['Name'], entry['Age']  ) for entry in dr]
@@ -42,14 +44,15 @@ with open(filename,'r') as fin:
 conn.commit()
 conn.close()
 
-# Update 
+# Update
 conn = sqlite3.connect("titanic.db")
-cur = conn.cursor()    
-cur.execute("""UPDATE passengers SET 
+
+cur = conn.cursor()
+cur.execute("""UPDATE passengers SET
 Name = 'Moran, Mr. James', 
 Age = 50
 WHERE PassengerId = 6""")
-cur.execute("""SELECT rowid,* FROM passengers WHERE Name = "Moran, Mr. James" """)  # rowid is now the first element in the returned tuple
+cur.execute("""SELECT rowid,* FROM passengers WHERE Name = "Moran, Mr. James" """)
 passengers = cur.fetchall()
 for passenger in passengers:
     # Use indexing to return the elements of the tuple
@@ -61,7 +64,8 @@ conn.close()
 
 # Delete
 conn = sqlite3.connect("titanic.db")
-cur = conn.cursor() 
+
+cur = conn.cursor()
 cur.execute("""SELECT * FROM passengers WHERE Name = "Sjostedt, Mr. Ernst Adolf" """)
 passengers = cur.fetchall()
 
@@ -74,9 +78,10 @@ for passenger in passengers:
 conn.commit()
 conn.close()
 
-# Average age of passengers 
+# Average age of passengers
 conn = sqlite3.connect("titanic.db")
-cur = conn.cursor() 
+
+cur = conn.cursor()
 cur.execute("""SELECT AVG("Age") FROM passengers""")
 passengers = cur.fetchall()
 

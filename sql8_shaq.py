@@ -1,13 +1,13 @@
-"""given the dataset provided MOCK_DATA.csv, find out the following: 
-- sort the IP addresses by the first three digits (network identifier) 
+"""given the dataset provided MOCK_DATA.csv, find out the following:
+- sort the IP addresses by the first three digits (network identifier)
 - What are all the domains in the emails (domain i.e. : @engadget.com)
-- what is the most common domain name ? 
+- what is the most common domain name ?
 - Out of the emails create a dictionary of counts for the top level domain names (.com, .pl etc..)
 ```
 { '.com': 10, .... }
 ```
 
-- Write a function called check_username that takes an email address and checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name 
+- Write a function called check_username that takes an email address and checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name
 
 def check_username(email, firstname, lastname):
 """""
@@ -69,7 +69,7 @@ with open('mock_data.csv', newline='') as csvfile:
     pprint(Counter(get_top_level_domain(dom) for dom in all_emails).most_common()[:3])
 
     """
-    Write a function called check_username that takes an email address and 
+    Write a function called check_username that takes an email address and
     checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name
 
     """
