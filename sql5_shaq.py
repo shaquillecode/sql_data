@@ -36,7 +36,7 @@ purchases = {'2021-01-01':
                  'item-002':
                       {'name': 'Rolaids'},
                  'item-003':
-                      {'name': 'Orange juice'}  }            
+                      {'name': 'Orange juice'}  }   
             }
 
 purchases['2021-01-01']['item-004'] = {'name':'Bloody Mary'}
@@ -46,18 +46,19 @@ print([ v['name'] for k,v in purchases['2021-01-01'].items()])
 # part 2
 print([ v['name'] for k,v in purchases['2021-01-01'].items() if v['name'].lower().endswith('juice')])
 
+
 # Exercise 3
 list1 =[1,2,3,4,5,6,7,8,9]
 def findCombosThatAddUpTo9(list1):
-  listOfCombos = []
-  for i in range(len(list1)):
-    for j in range(i, len(list1)):
-      # print(list[i] + list[j])
-      if list1[i] + list1[j] == 9:
-        combos = (list1[i], list1[j])
-        if combos not in listOfCombos:
-          listOfCombos.append(combos)
-  print(list1[i])
-  print(list1[j])
-  return listOfCombos
+    listOfCombos = []
+    for i in range(len(list1)):
+        for j in range(i, len(list1)):
+            # print(list[i] + list[j])
+            if list1[i] + list1[j] == 9:
+                combos = (list1[i], list1[j])
+                if combos not in listOfCombos:
+                    listOfCombos.append(combos)
+    print(list1[i])
+    print(list1[j])
+    return listOfCombos
 findCombosThatAddUpTo9(list1)

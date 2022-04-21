@@ -20,7 +20,7 @@ mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM album")
 
 for x in mycursor:
-  print(x)
+    print(x)
 mydb.close()
 print("==="*35)
 
@@ -35,7 +35,7 @@ mycursor = mydb.cursor()
 
 mycursor.execute("SELECT * FROM GENRE LIMIT 10")
 for x in mycursor:
-  print(x)
+    print(x)
 print("==="*35)
 
 mycursor.execute('''
@@ -50,16 +50,16 @@ FROM invoice
 ''')
 
 for x in mycursor:
-  print(x)
+    print(x)
 print("==="*35)
 
 mycursor.execute("SELECT * FROM TRACK LIMIT 10")
 for x in mycursor:
-  print(x)
+    print(x)
 print("===" * 35)
 
 mycursor.execute("SELECT * FROM invoiceline LIMIT 10")
 for x in mycursor:
-  print(x)
+    print(x)
 mydb.close()
 print("==="*35)

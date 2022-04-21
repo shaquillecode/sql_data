@@ -21,7 +21,7 @@ def generate_pyramid(rows=5):
     '''Generates A pyramid'''
     pyramid_one = ["*" * i for i in range(1, rows + 1) ]
     pyramid_two  = ["*" * i for i in range(rows, 0, -1) ]
-    return pyramid_one + ['\n'] + pyramid_two
+    return pyramid_one + pyramid_two
 
 #2
 def add_smile(_pyramid):
@@ -36,9 +36,8 @@ def add_smile(_pyramid):
 
 
 if __name__ == '__main__':
-    _pyramid = generate_pyramid()
-    smiles = add_smile(_pyramid)
-    print(_pyramid)
+    print(generate_pyramid())
+    smiles = add_smile(generate_pyramid()) 
     print(smiles)
     for smile in smiles:
         print(smile)

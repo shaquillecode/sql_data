@@ -14,8 +14,8 @@ os.chdir('/Users/shaq/Desktop/archive/sql_data/data')#this changes the working d
 print(os.getcwd()) # This show changes
 
 
-db_name = "world.db"
-conn = sqlite3.connect(db_name)
+DB_NAME = "world.db"
+conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
 
 data = []
@@ -26,7 +26,7 @@ for entry in cur:
 pprint(data)
 
 
-#add data to mongodb 
+#add data to mongodb
 client = MongoClient()
 world_db = client.world_database
 country_collection = world_db.country_collection
@@ -37,10 +37,10 @@ for post in country_collection.find( { "population": { "$gt": 500000 } } ):
     print(post)
 
 # total populations of the following countries
-total_populations = 0
+TOTAL_POPULATIOS = 0
 for post in country_collection.find( { "country_name": { "$in":  ["Mexico", "Canada", "USA", "Brazil"] } } ):
-    total_populations += post['population']
-    
+    TOTAL_POPULATIOS += post['population']
+
 # land mass greater than 2000
 for post in country_collection.find( { "area": { "$gt": 2000 } } ):
     print(post)
@@ -49,22 +49,16 @@ for post in country_collection.find( { "area": { "$gt": 2000 } } ):
 for post in country_collection.find( { "country_name": { "$nin": ["Mexico", "Canada", "USA", "Brazil"] } } ):
     print(post)
 
-#extra 
-def apply_mongo_find(data, query):
-    return data.find(query)
-
-
-
 def apply_mongo_find(data, query):
     res = []
     for entry in data.find(query):
         res.append(entry)
-    return res 
+    return res
 
 
-def apply_mongo_find(data, query):
-    for entry in data.find(query):
-        yield entry 
-        
-apply_mongo_find(data,{ "population": { "$gt": 500000 } })
-apply_mongo_find(data,{ "area": { "$gt": 2000 } } )
+# def apply_mongo_find(data, query):
+#     for entry in data.find(query):
+#         yield entry
+
+apply_mongo_find(data, { "population": { "$gt": 500000 } })
+apply_mongo_find(data, { "area": { "$gt": 2000 } } )
