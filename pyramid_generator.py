@@ -37,7 +37,7 @@ def add_smile(_pyramid):
 
 if __name__ == '__main__':
     print(generate_pyramid())
-    smiles = add_smile(generate_pyramid()) 
+    smiles = add_smile(generate_pyramid())
     print(smiles)
     for smile in smiles:
         print(smile)

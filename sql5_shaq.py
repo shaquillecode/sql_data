@@ -11,18 +11,12 @@ print(suits)
 deck = []
 print(len(cards))
 print(len(suits))
-print(len(cards) * len(suits))
 print(len(suits) * len(cards))
-for card in cards:
-    for suit in suits:
-        deck.append(f'{card}-{suit}' )
-print(deck)
-print("+"*36)
 for suit in suits:
     for card in cards:
         deck.append(f'{card}-{suit}' )
 print(deck)
-print("+"*36)
+print("==="*35)
 
 # Exercise 2
 # Add a 4th item with a key of 'item-004' and name of 'Bloody Mary'
@@ -36,7 +30,7 @@ purchases = {'2021-01-01':
                  'item-002':
                       {'name': 'Rolaids'},
                  'item-003':
-                      {'name': 'Orange juice'}  }   
+                      {'name': 'Orange juice'}  }
             }
 
 purchases['2021-01-01']['item-004'] = {'name':'Bloody Mary'}
@@ -60,5 +54,6 @@ def findCombosThatAddUpTo9(list1):
                     listOfCombos.append(combos)
     print(list1[i])
     print(list1[j])
+    print(listOfCombos)
     return listOfCombos
 findCombosThatAddUpTo9(list1)

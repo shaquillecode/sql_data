@@ -7,7 +7,9 @@
 { '.com': 10, .... }
 ```
 
-- Write a function called check_username that takes an email address and checks that the first letter matches the first letter of the name in the first name column and the rest of the string is from the last name
+- Write a function called check_username that takes an email address
+and checks that the first letter matches the first letter of the name in the first name column
+and the rest of the string is from the last name
 
 def check_username(email, firstname, lastname):
 """""
@@ -30,26 +32,23 @@ with open('mock_data.csv', newline='') as csvfile:
         all_emails.append(row['email'])
 
     #part 1: sorted ip addresses
-
-
     sorted_ips = sorted(all_ip_addresses, key=lambda ip: int(ip.split('.')[0]))
     # pprint(sorted_ips)
 
 
-    #part 2: What are all the domains in the emails (domain i.e. :@ engadget.com)
-
+    #part 2: Find domains in the emails (domain i.e. :@ engadget.com)
     #helper function
     get_domain = lambda email : email.split('@')[1]
-
     # def get_domain(email):
-    # 	return email.split('@')[1]
+    #     return email.split('@')[1]
+
 
     distinct_domains = { get_domain(dom) for dom in all_emails }
     #print( set([ get_domain(dom) for dom in all_emails ]))
     #distinct_domains_list = set([ get_domain(dom) for dom in all_emails ])
     #pprint(distinct_domains)
 
-    #part 3: What is the most common domain name ? (using counter)
+    #part 3: Most common domain name ? (using counter)
     domain_counts = {}
     for dom in all_emails:
         dom = get_domain(dom)
@@ -66,7 +65,7 @@ with open('mock_data.csv', newline='') as csvfile:
     #helper function
     get_top_level_domain = lambda email : email.split('.')[-1]
 
-    pprint(Counter(get_top_level_domain(dom) for dom in all_emails).most_common()[:3])
+    # pprint(Counter(get_top_level_domain(dom) for dom in all_emails).most_common()[:3])
 
     """
     Write a function called check_username that takes an email address and

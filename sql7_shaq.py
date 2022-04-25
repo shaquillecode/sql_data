@@ -1,3 +1,4 @@
+'''Find common word Function With count using Dictionary data structure'''
 import os
 import string
 from pprint import pprint
@@ -16,8 +17,8 @@ def find_common_word(text):
     '''Finds Common word'''
 
     #so i want to filter out by the word list
-    with open('function_words.txt') as f:
-        word_list = list(map(lambda x:x.strip(), f.readlines()))
+    with open('function_words.txt') as fin:
+        word_list = list(map(lambda x:x.strip(), fin.readlines()))
         # for line in f.readlines():
         #     line = line.strip()
         #     print(line)
@@ -25,14 +26,13 @@ def find_common_word(text):
     text = text.translate(str.maketrans('', '', string.punctuation ))
     the_list = text.lower().split()
     the_dict = {}
-    for x in the_list:
-
-        if x not in word_list:
-            if x not in the_dict:
-                the_dict[x] = 0
-            the_dict[x] += 1
-    pprint(the_dict)
-    common_word = [f'"{k}" is the most common word. It appeared {v} times' for k,v in the_dict.items() if v == max(the_dict.values())]
+    for word in the_list:
+        if word not in word_list:
+            if word not in the_dict:
+                the_dict[word] = 0
+            the_dict[word] += 1
+    common_word = [f'"{k}" is the most common word. It appeared {v} times'
+    for k,v in the_dict.items() if v == max(the_dict.values())]
     pprint(sorted(the_dict.items(), key=itemgetter(1), reverse=True)[:5])
     pprint(common_word)
 
